@@ -1,0 +1,68 @@
+Discord bot planning
+------------------------
+
+
+Quiz bot
+------------
+
+Classes:
+---------
+
+- main.py´
+- text_files.py (methods needed for reading/writing text files)
+- discord_commands.py (commands for the bot)
+- database.py (methods to handle database)
+
+
+functions:
+- bot asks questions (await message.channel.send)
+- user starts quiz(!trivia on)
+- user ends quiz(!trivia off)
+- user answers to the questions
+- bot checks if the answer is correct( message.content.startswith)
+
+storage:
+- user information stored in repl database
+- questions stored in text files
+
+libraries needed:
+- errno ( file exceptions)
+- random (choosing random questions)
+- from replit import db (replit database)
+- os (to retrieve discord authentication key from enviroment variables)
+- discord 
+
+functions & commands needed:
+
+Discord
+-------
+- client = discord.Client() (make instance of discord class)
+- async def on_ready (test for bot admin to see the bot is up)
+- async def_on on_message (for handling discord messages)
+- message.content.startswith (checking user input)
+- message.channel.send (for bot to send messages on discord)
+Database
+--------
+- db["key"] = "value" (storing keys/values in replit- database)
+- value = db["key"] (getting keys/values from replit database)
+- del db["key"] (deleting keys from replit database)
+- keys = db.keys() (listing all keys from replit database for test purpose)
+File storage
+------------
+- try & except structure around file processing
+- s.open("file path", "at") (open file & set it to append to add questions in the end)
+- s.close () (close file)
+- s.readlines (read lines in file)
+File errors:
+------------
+except Exception as exc:
+    if exc.errno == errno.ENOENT:
+        print("The file doesn't exist.")
+    elif exc.errno == errno.EMFILE:
+        print("You've opened too many files.")
+    else:
+        print("The error number is:", exc.errno)
+
+
+
+
