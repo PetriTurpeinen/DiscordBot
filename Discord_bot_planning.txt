@@ -13,6 +13,14 @@ Classes:
 - discord_commands.py (commands for the bot)
 - database.py (methods to handle database)
 
+Variables:
+----------
+- list for the questions (split i.e "|" needed to seperate question & answer)
+- variable for the correct answer (use split, compare to user input)
+- variable for the question (use split)
+- database variable: key: user_name, value: user_score
+
+
 
 functions:
 - bot asks questions (await message.channel.send)
@@ -62,6 +70,7 @@ except Exception as exc:
         print("You've opened too many files.")
     else:
         print("The error number is:", exc.errno)
+
 
 
 
