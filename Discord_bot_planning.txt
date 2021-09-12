@@ -26,7 +26,7 @@ functions:
 - bot asks questions (await message.channel.send)
 - user starts quiz(!trivia on)
 - user ends quiz(!trivia off)
-- user answers to the questions
+- user answers to the questions (message.author.name needed to store user name)
 - bot checks if the answer is correct( message.content.startswith)
 
 storage:
@@ -49,6 +49,7 @@ Discord
 - async def_on on_message (for handling discord messages)
 - message.content.startswith (checking user input)
 - message.channel.send (for bot to send messages on discord)
+- message.author.name (needed to store user name)
 Database
 --------
 - db["key"] = "value" (storing keys/values in replit- database)

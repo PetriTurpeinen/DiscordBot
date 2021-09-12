@@ -1,0 +1,3 @@
+- currency converter
+- retrieve trivia questions from a website (web scraping
+- translate a word and retrieve it from a website (i.e http://www.sanakirja.org)
