@@ -1,0 +1,20 @@
+What is capital of Germany?|Berlin|
+What is capital of France?|Paris|
+What is capital of Finland|Helsinki|
+What is capital of Norway?|Oslo|
+What is Capital of United Kingdom?|London|
+What is capital of Spain|Madrid|
+What is capital of Russia?|Moscow|
+What is capital of Italy?|Rome|
+What is capital of Portugal?|Lisbon|
+What is capital of Sweden?|Stockholm|
+What is capital of Estonia?|Tallinn|
+What is capital of Poland?|Warsaw|
+What is capital of Austria?|Vienna|
+What is capital of USA?|Washington D.C|
+What is capital of Kenya?|Nairobi|
+What is capital of Denmark?|Copenhagen|
+What is capital of Egypt?|Cairo|
+What is capital of Japan?|Tokyo|
+What is capital of India?|New Delhi|
+What is capital of Iraq?|Baghdad|

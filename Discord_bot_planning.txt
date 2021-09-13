@@ -10,8 +10,10 @@ Classes:
 
 - main.py´
 - text_files.py (methods needed for reading/writing text files)
+- quiz_methods
 - discord_commands.py (commands for the bot)
 - database.py (methods to handle database)
+- keepalive.py (to keep bot running on repl.it)
 
 Variables:
 ----------
