@@ -19,12 +19,3 @@ class Files():
         else:
             print("The error number is:", exc.errno)
     return questions
-
-
-#for question in questions:
-#  print(question)
-
-#random_question = random.choice(questions)
-#question = random_question.split("|")
-#print("Question is: ", question[0], "and answer is", question[1])
-#print(random_question)
