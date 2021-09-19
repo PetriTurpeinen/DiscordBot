@@ -10,6 +10,7 @@ client = discord.Client()
 
 #Variables
 #Used to check if quiz is active, set to off by default.
+qlist = ["",""]
 quizState = ".quizoff"
 #--------------
 #Instances
@@ -40,28 +41,44 @@ async def on_message(message):
     return
   
   global quizState
+  global qlist
+
+  if message.content == ".randomquestion":
+    qlist = quizmethod.get_question()
+
+    await message.channel.send(qlist[0])
+    await message.channel.send(qlist[1])
  
-  if message.content.startswith(".quizstate"):
+  if message.content == ".quizstate":
     await message.channel.send(quizState) 
 
-  if message.content.startswith(".quizoff"):
+  if message.content == ".quizoff":
     quizState = ".quizoff"
     await message.channel.send("You have set quiz off.")    
 
-  #Start quiz and ask a random question
-  if message.content.startswith(".quizon") and quizState == ".quizoff":
+  #Start quiz and ask a random question (reads qustions from text file)
+  #if message.content == ".quizon" and quizState == ".quizoff":
+    #quizState = ".quizon"    
+    #await message.channel.send("You have set quiz on.")           
+    #await message.channel.send(quizmethod.askRandomQuestion()
+  if message.content == ".quizon" and quizState == ".quizoff":
     quizState = ".quizon"    
-    await message.channel.send("You have set quiz on.")           
-    await message.channel.send(quizmethod.askRandomQuestion())  
+    await message.channel.send("You have set quiz on.")
+    qlist = quizmethod.get_question()           
+    await message.channel.send(qlist[0])
+    await message.channel.send(qlist[2])      
 
 
   #Congratulate user for right answer and keep asking questions
-  if message.content == databasevalues.getAnswer() and quizState == ".quizon":    
+  if message.content == qlist[1] and quizState == ".quizon":    
     databasevalues.addUserDB(message.author.name)
     #Message sent to the user if he/she answers correctly  
     correctmsg = "That was correct answer. You have now: " + str(databasevalues.getPoints(message.author.name)) + " points"    
-    await message.channel.send(correctmsg)     
-    await message.channel.send(quizmethod.askRandomQuestion())   
+    await message.channel.send(correctmsg)    
+    qlist = quizmethod.get_question()
+    #await message.channel.send(quizmethod.askRandomQuestion())
+    await message.channel.send(qlist[0])
+    await message.channel.send(qlist[2])         
 
 #---------------
 #Discord bot token
